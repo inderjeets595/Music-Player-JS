@@ -1,0 +1,353 @@
+* {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #E6E6E6;
+  color: #000000;
+}
+
+.dark-theme{
+  background-color: #555656;
+  color:white;
+}
+
+.heading h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  padding-bottom: 2rem;
+  ;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-section {
+  background-color: #6BB8DE;
+  height: auto;
+}
+.dark-card-section {
+  background-color: #263238;
+}
+
+/* All songs container section */
+.all-songs {
+  width: 26%;
+  font-size: 16px;
+  padding-left: 0.7rem;
+  border-top-right-radius: 10px;
+}
+
+h2 {
+  padding-bottom: 2.2rem
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+
+}
+
+ul.song-list li {
+  display: inline-block;
+  width: 65%;
+  background-color: #0A81BC;
+  color: white;
+  padding: 8px;
+  margin-bottom: 11px;
+  white-space: nowrap;
+  border-radius: 5px;
+}
+
+.dark-bg-color{
+  background-color: #63696D !important;
+}
+
+ul.song-list li:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.all-playlist ul.song-list li {
+  margin-bottom: 6px;
+}
+
+#playlist-heading{
+  display: none;
+  padding-bottom:10px!important;
+}
+/*End all songs container section */
+
+/* Music player container section*/
+.card {
+  width: 38%;
+}
+
+.current-song-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+
+.current-song-detail {
+  height: 340px;
+  width: 95%;
+  background-color: #0A81BC;
+  border-radius: 5% !important;
+  padding: 15px !important;
+}
+
+.current-song-detail:hover {
+  color: white;
+}
+
+.current-song-detail img {
+  height: 75%;
+  width: 100%;
+}
+
+#current-song-name {
+  padding: 4px 0px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#current-artist-name {
+  padding: 4px 0px;
+}
+
+.align-center {
+  padding: 10px;
+  margin: 5px;
+}
+
+.card-shadow {
+  box-shadow: -4px -4px 3px #905BFD;
+  border-radius: 5px;
+}
+
+#music-player-control {
+  width: 45%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+
+}
+
+audio {
+  width: 28rem;
+}
+
+#music-player-control button {
+  margin-right: 10px;
+  height: 2.5rem;
+  margin-bottom: 10px;
+  width: 45%;
+  color: white;
+  font-size: 15px;
+  /* padding: 2px 0px; */
+  background-color: #905BFD;
+  border: 0px;
+  font-size: 1rem;
+
+}
+
+#music-player-control button:hover {
+  cursor: pointer;
+}
+
+#music-player-control button:last-child {
+  font-size: 15px;
+  margin: auto;
+  display: block;
+  /* Make the button a block element */
+}
+
+/*End music player section*/
+
+/* My and current playist section*/
+.playlist {
+  width: 30%;
+}
+
+.all-playlist {
+  width: 73%;
+  height: 92%;
+  padding: 0px 0 0 20px;
+}
+
+.all-playlist h2 {
+  padding-top: 12px;
+  padding-bottom: 15px;
+}
+
+#filter-section {
+  padding: 2.2rem 0rem;
+}
+
+#filter-section select {
+  padding: 8px;
+  background-color: #3E718A;
+  border-radius: 5px;
+
+}
+
+#filter-section option {
+  background-color: #0B81BC;
+  padding: 10px;
+}
+
+#filter-section option:hover {
+  background-color: gray;
+  color: white;
+}
+
+#new-playlist {
+  height: 35px;
+  width: 55%;
+  background-color: #F4F4F4;
+  font-size: 1rem;
+  margin: 0 0px 14px 0;
+  padding: 0 0 0 10px;
+}
+
+.create-playlist button {
+  padding: 7px 12px;
+  background-color: #905BFD;
+  border: 0px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/*END Playlist Section*/
+
+
+/* The switch toggler button- the box around the slider */
+
+#switch-container {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+
+  width: 95px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*------ ADDED CSS ---------*/
+.slider:after
+{
+ content:'Dark';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ right:50%;
+ margin:0 0 0 9px;
+ font-size: 13px;
+ font-weight: 600;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'Light';
+}
+
+
+@media (min-width:900px) and (max-width: 1200px) {
+  /* Add your styles here */
+  audio {
+   width:22rem;
+  }
+  /* Example: reduce font size when viewport is less than 1200px */
+}
+
+@media (max-width:899px) {
+  audio {
+    width:15rem;
+   }
+}
+
+@media (max-width:715px) {
+  audio {
+    width:10rem;
+   }
+}
+@media (max-width:500px) {
+  .container {
+    width:499px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .all-songs,.card,.playlist  {
+    width:470px;
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="assets/images/favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="main-container">
+
+    <div class="heading">
+      <div id="switch-container">
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+          <span class="slider round"></span>
+          <span class="on">Light</span>
+            <span class="off">Dark</span>
+        </label>
+      </div>
+      <h1>Music Player</h1>
+    </div>
+
+    <div class="container">
+
+      <div class="all-songs card-section">
+        <div id="filter-section">
+          <label for="genre-filter">Filter by Genre:</label>
+          <select name="genre-filter" id="genre-filter">
+            <option value="all">All</option>
+            <option value="pop">Pop</option>
+            <option value="rock">Rock</option>
+            <option value="hip-hop">Hip Hop</option>
+          </select>
+        </div>
+
+        <h2>All Songs</h2>
+        <ul class="song-list" id="song-list">
+        </ul>
+      </div>
+
+      <div class="card card-section card-shadow">
+        <div class="current-song-container ">
+          <div class="current-song-detail align-center card-shadow">
+            <img id="current-song-image" src="" alt="Song Image">
+            <p id="current-song-name"></p>
+            <p id="current-artist-name"></p>
+          </div>
+
+          <div id="music-player-content" class="align-center">
+            <audio id="audio-player" controls  autoplay="true">
+              <source src="" type="audio/mpeg" id="audio-source">
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+
+          <div id="music-player-control">
+            <button onclick="playPrevious()"><span>&#10232;</span>  </button>
+            <button onclick="playNext()"><span>&#10233;</span></button>
+            <button onclick="addToPlaylist()">Add to Playlist</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="playlist ">
+        <div class="create-playlist">
+          <input type="text" name="new-playlist" id="new-playlist" placeholder="Enter Playlist Name">
+          <button type="button" onclick="createPlaylist()">Create Playlist</button>
+        </div>
+
+        <div class="all-playlist card-section card-shadow">
+          <h2>Current Playlist</h2>
+          <h3 id="playlist-heading"></h3>
+          <ul class="song-list" id="current-playlist">
+          </ul>
+          <h2>All Playlist</h2>
+
+          <ul class="song-list" id="all-my-playlist">
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
